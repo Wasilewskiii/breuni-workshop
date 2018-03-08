@@ -10,8 +10,8 @@ public class CommentsService {
 
   private CommentsRepository commentsRepository;
 
-  @Autowired
-  public CommentsService(CommentsRepository commentsRepository) {
+  public CommentsService(CommentsRepository repository) {
+    commentsRepository = repository;
   }
 
   public void saveComment(Comment comment) {

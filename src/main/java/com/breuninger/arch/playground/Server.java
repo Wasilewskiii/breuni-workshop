@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
-@PropertySource("version.properties")
+@PropertySource("classpath:version.properties")
 @ComponentScan(basePackages = {"de.otto.edison", "com.breuninger.arch.playground"})
 @EnableCaching
 public class Server {
