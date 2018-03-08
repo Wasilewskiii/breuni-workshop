@@ -1,6 +1,22 @@
 package com.breuninger.arch.playground.cards.domain;
 
+import java.util.Date;
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.jongo.marshall.jackson.oid.MongoId;
+
+import com.breuninger.arch.playground.common.util.SanitizingUtil;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Value;
+
+@Builder(toBuilder = true)
+@AllArgsConstructor
+@Value
 public class Card {
+    @MongoId
     private String id;
     private String title;
 
@@ -9,65 +25,7 @@ public class Card {
     private String senderFirstName;
     private String senderSurname;
 
-
-  public Card(String id, String title, String receiverFirstName,
-              String receiverSurname, String senderFirstName, String senderSurname) {
-        this.id = id;
-        this.title = title;
-
-        this.receiverFirstName = receiverFirstName;
-        this.receiverSurname = receiverSurname;
-        this.senderFirstName = senderFirstName;
-        this.senderSurname = senderSurname;
-
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getReceiverFirstName() {
-        return receiverFirstName;
-    }
-
-    public void setReceiverFirstName(String receiverFirstName) {
-        this.receiverFirstName = receiverFirstName;
-    }
-
-    public String getReceiverSurname() {
-        return receiverSurname;
-    }
-
-    public void setReceiverSurname(String receiverSurname) {
-        this.receiverSurname = receiverSurname;
-    }
-
-    public String getSenderFirstName() {
-        return senderFirstName;
-    }
-
-    public void setSenderFirstName(String senderFirstName) {
-        this.senderFirstName = senderFirstName;
-    }
-
-    public String getSenderSurname() {
-        return senderSurname;
-    }
-
-    public void setSenderSurname(String senderSurname) {
-        this.senderSurname = senderSurname;
-    }
-
-    public Card sanitize(){
-        //TODO: sanitize!
-          return this;
-    }
+  public Card sanitize() {
+    return this;
+  }
 }

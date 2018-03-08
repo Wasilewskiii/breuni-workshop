@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Greetings Card</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
+
+	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="../vendor/slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="../vendor/slick/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body>
+
+<div class="row card-layer">
+	<div class="col-md-6">
+			<div class="slider slider-nav">
+					<div><img src="../images/greeting-1.jpg"></div>
+					<div><img src="../images/greeting-2.jpg"></div>
+					<div><img src="../images/greeting-3.jpg"></div>
+					<div><img src="../images/greeting-4.jpg"></div>
+					<div><img src="../images/greeting-5.jpg"></div>
+			</div>
+	</div>
+	<div class="col-md-6">
+			<form class="contact100-form validate-form" action="/cards" mathod="post">
+					<span class="contact100-form-title">
+						Create your greetings card
+					</span>
+	
+					<label class="label-input100" for="first-name">Receivers name</label>
+					<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name of receiver">
+						<input id="receiver-first-name" class="input100" type="text" name="receiver-first-name" placeholder="First name">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name of receiver">
+						<input id="receiver-last-name" class="input100" type="text" name="receiver-last-name" placeholder="Last name">
+						<span class="focus-input100"></span>
+					</div>
+	
+					<label class="label-input100" for="first-name">Sender name</label>
+					<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type your first name">
+						<input id="first-name" class="input100" type="text" name="sender-first-name" placeholder="Your first name">
+						<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type your last name">
+						<input class="input100" type="text" name="sender-last-name" placeholder="Your last name">
+						<span class="focus-input10x0"></span>
+					</div>
+	
+					<label class="label-input100" for="message">Message</label>
+					<div class="wrap-input100 validate-input" data-validate = "Message is required">
+						<textarea id="message" class="input100" name="message" placeholder="Write a message"></textarea>
+						<span class="focus-input100"></span>
+					</div>
+	
+					<div class="container-contact100-form-btn">
+						<button class="contact100-form-btn">
+							Save card
+						</button>
+					</div>
+				</form>
+	</div>
+</div>
+
+	<script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../vendor/bootstrap/js/popper.js"></script>
+	<script src="../vendor/slick/slick.min.js"></script>
+	<script src="../js/main.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$('.slider-nav').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				dots: true,
+				focusOnSelect: true
+			});
+		});
+</script>
+</body>
+</html>
