@@ -1,11 +1,13 @@
 package com.breuninger.arch.playground.comment.domain;
 
+import org.bson.Document;
+import org.springframework.stereotype.Repository;
+
 import com.breuninger.arch.playground.common.domain.JongoMapper;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+
 import de.otto.edison.mongo.AbstractMongoRepository;
-import org.bson.Document;
-import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,10 +44,10 @@ public class CommentRepository extends AbstractMongoRepository<String, Comment> 
     return JongoMapper.decode(document, Comment.class);
   }
 
-
   @Override
   protected void ensureIndexes() {
-    // CompletableFuture.runAsync(() -> collection().createIndex(Indexes.compoundIndex(Indexes.ascending(BOARD_ID), Indexes.descending(CREATION_DATE)), new IndexOptions().background(true)));
+    // CompletableFuture.runAsync(() -> collection().createIndex(Indexes.compoundIndex(
+    // Indexes.ascending(BOARD_ID), Indexes.descending(CREATION_DATE)), new IndexOptions().background(true)));
   }
 
   public List<Comment> findCommentsByCardId(String exampleCardId) {
