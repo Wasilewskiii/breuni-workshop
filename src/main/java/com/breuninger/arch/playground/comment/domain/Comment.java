@@ -1,7 +1,6 @@
-package com.breuninger.arch.playground.comments.domain;
+package com.breuninger.arch.playground.comment.domain;
 
 import com.breuninger.arch.playground.common.util.SanitizingUtil;
-import com.breuninger.arch.playground.example.domain.Example;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Value;

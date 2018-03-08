@@ -1,10 +1,8 @@
-package com.breuninger.arch.playground.comments.domain;
+package com.breuninger.arch.playground.comment.domain;
 
 import com.breuninger.arch.playground.common.domain.JongoMapper;
-import com.breuninger.arch.playground.example.domain.Example;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Filters;
 import de.otto.edison.mongo.AbstractMongoRepository;
 import org.bson.Document;
 import org.springframework.stereotype.Repository;
@@ -12,15 +10,15 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.breuninger.arch.playground.comments.domain.Comment.CARD_ID;
+import static com.breuninger.arch.playground.comment.domain.Comment.CARD_ID;
 import static com.mongodb.client.model.Filters.eq;
 
 @Repository
-public class CommentsRepository extends AbstractMongoRepository<String, Comment> {
+public class CommentRepository extends AbstractMongoRepository<String, Comment> {
 
   private final MongoCollection<Document> collection;
 
-  public CommentsRepository(final MongoDatabase mongoDatabase) {
+  public CommentRepository(final MongoDatabase mongoDatabase) {
     collection = mongoDatabase.getCollection("comments");
   }
 
